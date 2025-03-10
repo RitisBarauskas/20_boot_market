@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница нового маркета</title>
+</head>
+<body>
+    <h1>Главная страница нового маркета</h1>
+    <h3>Топ-3 товаров</h3>
+    <ul>
+        {% for good in goods %}
+            <li><b>{{ good.name }}</b> - {{ good.description }} (<a href="{% url 'items:good-detail' good.id %}">подробнее</a>)</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
