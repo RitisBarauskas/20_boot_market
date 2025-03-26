@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Товары по {{ type }} "{{ name }}"</title>
+</head>
+<body>
+    <h1>Товары по {{ type }} "{{ name }}"</h1>
+    <ul>
+        {% for good in goods %}
+            <li><b>{{ good.name }}</b> - {{ good.description }} (<a href="{% url 'items:good-detail' good.id %}">подробнее</a>)</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

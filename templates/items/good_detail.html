@@ -6,5 +6,11 @@
 </head>
 <body>
     <h1>{{ good.name }}</h1>
+    {% for tag in good.tags.all %}
+        <a href="{% url 'items:goods-by-tag' tag.id %}"><font color="{{ tag.color }}"> #{{ tag.name }}</font></a>
+    {% endfor %}
+    <h3>{{ good.description }}</h3>
+    <div>Категория: <a href="{% url 'items:goods-by-category' good.category.id %}">{{ good.category.name }}</a></div>
+    <div>Производитель: <a href="{% url 'items:goods-by-manufacture' good.manufacture.id %}">{{ good.manufacture.name }}</a></div>
 </body>
 </html>
